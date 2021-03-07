@@ -1,0 +1,60 @@
+﻿@model IEnumerable<SistemaCadastroFuncionarios.Models.Funcionario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Início</h1>
+
+
+<p>
+    <a asp-action="Adicionar">Adicionar novo funcionário</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CodFuncionario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Atividades)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodFuncionario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataNascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Atividades)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new {  id=item.CodFuncionario  }) |
+                @Html.ActionLink("Detalhes", "Detalhes", new {  id=item.CodFuncionario  }) |
+                @Html.ActionLink("Excluir", "Excluir", new {  id=item.CodFuncionario  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
