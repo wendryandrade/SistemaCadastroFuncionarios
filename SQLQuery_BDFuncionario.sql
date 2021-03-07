@@ -1,3 +1,5 @@
+
+
 create table Funcionario
 (
   CodFuncionario int identity(1,1) primary key,
